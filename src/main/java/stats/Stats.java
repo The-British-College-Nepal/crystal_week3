@@ -10,44 +10,24 @@ import java.util.Arrays;
  */
 public class Stats {
 
-	// STEP 1.2: Encapsulate fields
 	private int[] numbers;
 	private int count;
 
-	/**
-	 * Creates a Stats object with the given capacity.
-	 *
-	 * @param capacity maximum number of values
-	 */
 	public Stats(int capacity) {
 		numbers = new int[capacity];
 		count = 0;
 	}
 
-	/**
-	 * Adds a value to the array.
-	 *
-	 * @param value number to add
-	 */
 	public void addValue(int value) {
 		numbers[count] = value;
 		count++;
 	}
 
-	/**
-	 * Returns the number of values added.
-	 *
-	 * @return actual number of values
-	 */
 	public int getCount() {
 		return this.count;
 	}
 
-	/**
-	 * Returns the maximum value.
-	 *
-	 * @return highest value
-	 */
+	// STEP 2.3: Calculate maximum value
 	public int getMax() {
 
 		if (count == 0) {
@@ -65,11 +45,7 @@ public class Stats {
 		return max;
 	}
 
-	/**
-	 * Returns the minimum value.
-	 *
-	 * @return lowest value
-	 */
+	// STEP 2.4: Calculate minimum value
 	public int getMin() {
 
 		if (count == 0) {
@@ -87,11 +63,7 @@ public class Stats {
 		return min;
 	}
 
-	/**
-	 * Calculates the sum of all added values.
-	 *
-	 * @return total sum
-	 */
+	// STEP 2.1: Calculate total
 	public int getTotal() {
 
 		int total = 0;
@@ -103,18 +75,14 @@ public class Stats {
 		return total;
 	}
 
-	/**
-	 * Calculates the average of all added values.
-	 *
-	 * @return average value
-	 */
+	// STEP 2.2: Calculate average
 	public double getAverage() {
 
 		if (count == 0) {
 			throw new IllegalStateException("No values have been added");
 		}
 
-		return (double) getTotal() / count;
+		return getTotal() / (double) count;
 	}
 
 	@Override
